@@ -14,13 +14,10 @@ const inputNumber = [
 
 const displayNumber = document.querySelector('#displayer');
 
-console.dir(inputNumber[1].innerText);
-
 for (let index = 0; index < inputNumber.length; index++) {
   
   inputNumber[index].addEventListener('click', () => {
     let btnNumber = inputNumber[index].innerHTML;
-    console.log(btnNumber);
     displayNumber.value = btnNumber;
   })
 }
