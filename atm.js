@@ -15,7 +15,6 @@ const displayNumber = document.querySelector('#displayer');
 
 
 const mapedNumbers = inputNumber.map((numbers) => {
-  
   const btnValue = numbers.innerText;
   
   return numbers.addEventListener('click', function() {
