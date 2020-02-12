@@ -6,7 +6,6 @@ const inputNumber = [
   inputNumber5 = document.querySelector('div#n5'),
   inputNumber6 = document.querySelector('div#n6'),
   inputNumber7 = document.querySelector('div#n7'),
-  inputNumber0 = document.querySelector('div#n0'),
   inputNumber8 = document.querySelector('div#n8'),
   inputNumber9 = document.querySelector('div#n9'),
   inputNumber0 = document.querySelector('div#n0')
@@ -14,12 +13,25 @@ const inputNumber = [
 
 const displayNumber = document.querySelector('#displayer');
 
-for (let index = 0; index < inputNumber.length; index++) {
+
+const mapedNumbers = inputNumber.filter((numbers) => {
+  inputNumber.btnNumber;
+});
+
+console.dir(mapedNumbers)
+
+
+
+
+
+
+
+// for (let index = 0; index < inputNumber.length; index++) {
   
-  inputNumber[index].addEventListener('click', () => {
-    let btnNumber = inputNumber[index].innerHTML;
-    displayNumber.value = btnNumber;
-  })
-}
+//   inputNumber[index].addEventListener('click', () => {
+//     let btnNumber = inputNumber[index].innerHTML;
+//     displayNumber.value = btnNumber;
+//   })
+// }
 
 
