@@ -13,12 +13,13 @@ const inputNumber = [
 
 const displayNumber = document.querySelector('#displayer');
 
-
+debugger;
 const mapedNumbers = inputNumber.map((numbers) => {
+  debugger;
   const btnValue = numbers.innerText;
   
   return numbers.addEventListener('click', function() {
-    displayNumber.value = btnValue;
+    displayNumber.value = displayNumber.value + btnValue;
   });
 });
 
