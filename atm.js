@@ -14,17 +14,21 @@ const inputNumber = [
 const displayNumber = document.querySelector('#displayer');
 
 
-const mapedNumbers = inputNumber.filter((numbers) => {
-  inputNumber.btnNumber;
+const mapedNumbers = inputNumber.map((numbers) => {
+  
+  const btnValue = numbers.innerText;
+  
+  return numbers.addEventListener('click', function() {
+    displayNumber.value = btnValue;
+  });
 });
 
-console.dir(mapedNumbers)
 
 
 
 
-
-
+console.dir(displayNumber);
+console.dir(mapedNumbers);
 
 // for (let index = 0; index < inputNumber.length; index++) {
   
