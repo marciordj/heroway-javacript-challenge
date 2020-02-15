@@ -16,34 +16,53 @@ const confirmBtn = document.querySelector('div#confirm');
 const displayNumber = document.querySelector('#displayer');
 const displayAvaiableNotes = document.querySelector('div#bills-displayer');
 
-console.dir(displayAvaiableNotes);
-
-clearBtn.addEventListener('click', () => displayNumber.value = '' );
+clearBtn.addEventListener('click', () => displayNumber.value = '');
 
 const mapedNumbers = inputNumber.map((numbers) => {
   const btnValue = numbers.innerText;
-  
-  return numbers.addEventListener('click', function() {
+
+  return numbers.addEventListener('click', function () {
     displayNumber.value = displayNumber.value + btnValue;
   });
 });
 
+
 confirmBtn.addEventListener('click', () => {
   const convertNumber = Number(displayNumber.value);
-  const autenticationRequire = convertNumber > 0 ? true : false;
-  
-  if (autenticationRequire == true) {
-    switch (convertNumber) {
-      case convertNumber === 10:
-        displayAvaiableNotes.innerText = `R$ ${convertNumber}`;
-        break;
-      case convertNumber > 10 && convertNumber < 20:
-        displayAvaiableNotes.innerText = 
+  const autenticationRequire = convertNumber % 10 !== 0 ? true : false;
+
+  let notasCem = Math.floor(convertNumber / 100);
+  let resto = convertNumber % 100;
+
+  let notasCinquenta = Math.floor(resto / 50);
+  resto = resto % 50;
+
+  let notasVinte = Math.floor(resto / 20);
+  resto = resto % 20;
+
+  let notasDez = Math.floor(resto / 10);
+
+  if (convertNumber % 10 !== 0 || convertNumber <= 0) {
+    alert('Coloque um valor válido para saques')
+  } else {
+    if (notasCem > 0) {
+      displayAvaiableNotes.innerText = `R$ 100: ${notasCem} R$ 50: ${notasCinquenta} R$ 20: ${notasVinte} R$ 10: ${notasDez}`;
+
+
     }
+    if (notasCinquenta > 0) {
+      displayAvaiableNotes.innerText = `R$ 100: ${notasCem} R$ 50: ${notasCinquenta} R$ 20: ${notasVinte} R$ 10: ${notasDez}`;
+
+    }
+    if (notasVinte > 0) {
+      displayAvaiableNotes.innerText = `R$ 100: ${notasCem} R$ 50: ${notasCinquenta} R$ 20: ${notasVinte} R$ 10: ${notasDez}`;
+    }
+    if (notasDez > 0) {
+      displayAvaiableNotes.innerText = `R$ 100: ${notasCem} R$ 50: ${notasCinquenta} R$ 20: ${notasVinte} R$ 10: ${notasDez}`;
+    }
+
   }
-  }
-  
-  
+
 });
 
 
